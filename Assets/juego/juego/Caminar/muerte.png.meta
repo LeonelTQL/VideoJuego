@@ -1,0 +1,324 @@
+fileFormatVersion: 2
+guid: e4790a3127162dd499ded4796f3d3544
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1495636479084036639
+    second: muerte_0
+  - first:
+      213: -9146826682594036208
+    second: muerte_1
+  - first:
+      213: -8035738270839704436
+    second: muerte_2
+  - first:
+      213: 6411007131442772949
+    second: muerte_3
+  - first:
+      213: 8438921908048487067
+    second: muerte_4
+  - first:
+      213: 1148748271051980919
+    second: muerte_5
+  - first:
+      213: -7090138528488805932
+    second: muerte_6
+  - first:
+      213: -6759519522492609840
+    second: muerte_7
+  - first:
+      213: -4379679112118749336
+    second: muerte_8
+  - first:
+      213: -5761311427653955641
+    second: muerte_9
+  - first:
+      213: 5353207693381084643
+    second: muerte_10
+  - first:
+      213: -6503538819434997701
+    second: muerte_11
+  - first:
+      213: -1025596036456852066
+    second: muerte_12
+  - first:
+      213: -2197603606651242785
+    second: muerte_13
+  - first:
+      213: 1772434730842800220
+    second: muerte_14
+  - first:
+      213: 110568849217226209
+    second: muerte_15
+  - first:
+      213: 5518668859869808385
+    second: muerte_16
+  - first:
+      213: 980331233307676861
+    second: muerte_17
+  - first:
+      213: 7508057749278199717
+    second: muerte_18
+  - first:
+      213: -1548291980284112006
+    second: muerte_19
+  - first:
+      213: -4318410139592905430
+    second: muerte_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: muerte_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 18
+        width: 91
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cf894208c5bb00b0800000000000000
+      internalID: -5761311427653955641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte_10
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 18
+        width: 104
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e52edcd80a6a4a40800000000000000
+      internalID: 5353207693381084643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte_11
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 18
+        width: 93
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b381d94a6e9ceb5a0800000000000000
+      internalID: -6503538819434997701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte_16
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 18
+        width: 115
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107cc81c610469c40800000000000000
+      internalID: 5518668859869808385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte_18
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 18
+        width: 74
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5af88da5ebaf13860800000000000000
+      internalID: 7508057749278199717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 02273cd925444b74687f894815d81e7e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      muerte_0: -1495636479084036639
+      muerte_1: -9146826682594036208
+      muerte_10: 5353207693381084643
+      muerte_11: -6503538819434997701
+      muerte_12: -1025596036456852066
+      muerte_13: -2197603606651242785
+      muerte_14: 1772434730842800220
+      muerte_15: 110568849217226209
+      muerte_16: 5518668859869808385
+      muerte_17: 980331233307676861
+      muerte_18: 7508057749278199717
+      muerte_19: -1548291980284112006
+      muerte_2: -8035738270839704436
+      muerte_20: -4318410139592905430
+      muerte_3: 6411007131442772949
+      muerte_4: 8438921908048487067
+      muerte_5: 1148748271051980919
+      muerte_6: -7090138528488805932
+      muerte_7: -6759519522492609840
+      muerte_8: -4379679112118749336
+      muerte_9: -5761311427653955641
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
