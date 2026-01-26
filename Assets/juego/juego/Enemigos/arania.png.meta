@@ -1,0 +1,506 @@
+fileFormatVersion: 2
+guid: b0e5a68b30a48284cad600ebc507c6f1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7750780918779310341
+    second: arania_0
+  - first:
+      213: 535167904094790790
+    second: arania_1
+  - first:
+      213: -5281640019839563109
+    second: arania_2
+  - first:
+      213: 6601404140623414327
+    second: arania_3
+  - first:
+      213: -3314344413096891448
+    second: arania_4
+  - first:
+      213: -9084312858953205750
+    second: arania_5
+  - first:
+      213: -8225616756736188548
+    second: arania_6
+  - first:
+      213: 4694253577679795132
+    second: arania_7
+  - first:
+      213: -4444139839185060566
+    second: arania_8
+  - first:
+      213: -354253678909453850
+    second: arania_9
+  - first:
+      213: -9176917488138767969
+    second: arania_10
+  - first:
+      213: -746309646583002459
+    second: arania_11
+  - first:
+      213: 6812725389412758206
+    second: arania_12
+  - first:
+      213: 8149915863608661338
+    second: arania_13
+  - first:
+      213: -3192541297158924398
+    second: arania_14
+  - first:
+      213: 8719989571844304066
+    second: arania_15
+  - first:
+      213: 4224977102717068608
+    second: arania_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: arania_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 254
+        width: 111
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfe884cd1d1bf6490800000000000000
+      internalID: -7750780918779310341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arania_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 254
+        width: 110
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 684a2c29f5c4d6700800000000000000
+      internalID: 535167904094790790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arania_2
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 254
+        width: 109
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ac9f1a268d3b6b0800000000000000
+      internalID: -5281640019839563109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arania_3
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 254
+        width: 106
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 734c6a41716ec9b50800000000000000
+      internalID: 6601404140623414327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arania_4
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 254
+        width: 105
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cb2f0201551102d0800000000000000
+      internalID: -3314344413096891448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arania_5
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 254
+        width: 109
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a08b495e5990ee180800000000000000
+      internalID: -9084312858953205750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arania_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 131
+        width: 133
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7f1d34142db8dd80800000000000000
+      internalID: -8225616756736188548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arania_7
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 131
+        width: 129
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb3f537f1c6552140800000000000000
+      internalID: 4694253577679795132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arania_8
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 131
+        width: 132
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d7631cc5e3352c0800000000000000
+      internalID: -4444139839185060566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arania_9
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 131
+        width: 141
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e90a3ce720751bf0800000000000000
+      internalID: -354253678909453850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arania_10
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 10
+        width: 159
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f913b6a7a2a05a080800000000000000
+      internalID: -9176917488138767969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arania_11
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 10
+        width: 159
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa09fe945394a5f0800000000000000
+      internalID: -746309646583002459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arania_13
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 9
+        width: 159
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5517bf3c415a1170800000000000000
+      internalID: 8149915863608661338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arania_15
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 9
+        width: 158
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cce3eaa050a30970800000000000000
+      internalID: 8719989571844304066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 740904f7c7e90494ea74100c6ce1323d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      arania_0: -7750780918779310341
+      arania_1: 535167904094790790
+      arania_10: -9176917488138767969
+      arania_11: -746309646583002459
+      arania_12: 6812725389412758206
+      arania_13: 8149915863608661338
+      arania_14: -3192541297158924398
+      arania_15: 8719989571844304066
+      arania_16: 4224977102717068608
+      arania_2: -5281640019839563109
+      arania_3: 6601404140623414327
+      arania_4: -3314344413096891448
+      arania_5: -9084312858953205750
+      arania_6: -8225616756736188548
+      arania_7: 4694253577679795132
+      arania_8: -4444139839185060566
+      arania_9: -354253678909453850
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

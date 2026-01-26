@@ -1,0 +1,674 @@
+fileFormatVersion: 2
+guid: 0c6eba1a3e971d24e8c572dfc69bd018
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3666848095002947682
+    second: dron_0
+  - first:
+      213: -6393843706970393744
+    second: dron_1
+  - first:
+      213: 1909195267868703795
+    second: dron_2
+  - first:
+      213: 3471213216281723920
+    second: dron_3
+  - first:
+      213: -6589507246738409868
+    second: dron_4
+  - first:
+      213: -8770578406985880673
+    second: dron_5
+  - first:
+      213: -3222512883124552032
+    second: dron_6
+  - first:
+      213: -8636497794016141782
+    second: dron_7
+  - first:
+      213: -6680099971087647010
+    second: dron_8
+  - first:
+      213: -376082350298936783
+    second: dron_9
+  - first:
+      213: 6901087827269470551
+    second: dron_10
+  - first:
+      213: 7092856611747536588
+    second: dron_11
+  - first:
+      213: 6565449995717123287
+    second: dron_12
+  - first:
+      213: -1447368947983854625
+    second: dron_13
+  - first:
+      213: -135580320708707890
+    second: dron_14
+  - first:
+      213: 8682167499963784260
+    second: dron_15
+  - first:
+      213: -7306669274039710370
+    second: dron_16
+  - first:
+      213: -3992491814774469942
+    second: dron_17
+  - first:
+      213: -2060312832750329421
+    second: dron_18
+  - first:
+      213: -8954076501527443655
+    second: dron_19
+  - first:
+      213: 591910982087296381
+    second: dron_20
+  - first:
+      213: -3984716134246365760
+    second: dron_21
+  - first:
+      213: -3427741721365102124
+    second: dron_22
+  - first:
+      213: 4817849920990385920
+    second: dron_23
+  - first:
+      213: 229506473074114101
+    second: dron_24
+  - first:
+      213: 8687427758793402892
+    second: dron_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dron_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 300
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 260f7f32ae243e230800000000000000
+      internalID: 3666848095002947682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 300
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 073b9a846018447a0800000000000000
+      internalID: -6393843706970393744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_2
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 300
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33cbb241bf2de7a10800000000000000
+      internalID: 1909195267868703795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_3
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 300
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0140d18670a3c2030800000000000000
+      internalID: 3471213216281723920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_4
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 300
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4767b41621e5d84a0800000000000000
+      internalID: -6589507246738409868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_5
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 300
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b25e84865a84680800000000000000
+      internalID: -8770578406985880673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_6
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 301
+        width: 61
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aebd3d3b955743d0800000000000000
+      internalID: -3222512883124552032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_7
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 302
+        width: 59
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2e1934b30ff42880800000000000000
+      internalID: -8636497794016141782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_8
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 203
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ede393f08748b43a0800000000000000
+      internalID: -6680099971087647010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_9
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 193
+        width: 75
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13a43205813e7caf0800000000000000
+      internalID: -376082350298936783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_10
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 189
+        width: 147
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7594b2cb0d695cf50800000000000000
+      internalID: 6901087827269470551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_11
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 189
+        width: 159
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cce1ef14283ee6260800000000000000
+      internalID: 7092856611747536588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_12
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 113
+        width: 74
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dc1f416cf92d1b50800000000000000
+      internalID: 6565449995717123287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_13
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 113
+        width: 72
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd3dd7c3c99e9ebe0800000000000000
+      internalID: -1447368947983854625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_14
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 111
+        width: 72
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec9bf99aa625e1ef0800000000000000
+      internalID: -135580320708707890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_15
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 111
+        width: 71
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c58c357514d7870800000000000000
+      internalID: 8682167499963784260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_16
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5d0a95f10f799a90800000000000000
+      internalID: -7306669274039710370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_19
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 17
+        width: 83
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 937c8c2dcdabcb380800000000000000
+      internalID: -8954076501527443655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_20
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 18
+        width: 70
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7547f1f6e3e63800800000000000000
+      internalID: 591910982087296381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dron_21
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 21
+        width: 73
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c54a7fa9c173b8c0800000000000000
+      internalID: -3984716134246365760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a24fdf11dd872354cbf12cfd630f1f92
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      dron_0: 3666848095002947682
+      dron_1: -6393843706970393744
+      dron_10: 6901087827269470551
+      dron_11: 7092856611747536588
+      dron_12: 6565449995717123287
+      dron_13: -1447368947983854625
+      dron_14: -135580320708707890
+      dron_15: 8682167499963784260
+      dron_16: -7306669274039710370
+      dron_17: -3992491814774469942
+      dron_18: -2060312832750329421
+      dron_19: -8954076501527443655
+      dron_2: 1909195267868703795
+      dron_20: 591910982087296381
+      dron_21: -3984716134246365760
+      dron_22: -3427741721365102124
+      dron_23: 4817849920990385920
+      dron_24: 229506473074114101
+      dron_25: 8687427758793402892
+      dron_3: 3471213216281723920
+      dron_4: -6589507246738409868
+      dron_5: -8770578406985880673
+      dron_6: -3222512883124552032
+      dron_7: -8636497794016141782
+      dron_8: -6680099971087647010
+      dron_9: -376082350298936783
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
