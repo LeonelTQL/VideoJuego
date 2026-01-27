@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pasillo2.unity
     guid: 39e143529f11dd34897516775b23a91e
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: fdb62d4f3abf44048b5e3184900e78b2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
