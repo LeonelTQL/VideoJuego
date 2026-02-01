@@ -25,6 +25,12 @@ public class DronMovement : MonoBehaviour
     [SerializeField] private float searchDuration = 4f;
     [SerializeField] private float explosionDuration = 0.8f; // NUEVO: Tiempo que dura la anim de explosión
 
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource loopSource; // Para el zumbido constante
+    [SerializeField] private AudioClip sonidoExplosion; // Clip: Explosiones
+    [SerializeField] private float volumenExplosion = 1f;
+
     // --- Referencias ---
     private Transform player;
     private Rigidbody2D rb;
@@ -50,6 +56,12 @@ public class DronMovement : MonoBehaviour
 
         currentState = State.Patrulla;
         UpdateAnimation(0);
+
+        if (loopSource != null)
+        {
+            loopSource.loop = true;
+            loopSource.Play(); // Inicia el zumbido del dron
+        }
     }
 
     void Update()
@@ -231,8 +243,12 @@ public class DronMovement : MonoBehaviour
         rb.linearVelocity = Vector2.zero; // Frenar en seco
         rb.bodyType = RigidbodyType2D.Kinematic; // Desactivar física para que no empuje
         GetComponent<Collider2D>().enabled = false; // Desactivar colisión
+        if (loopSource != null) loopSource.Stop();
+        if (SFXManager.Instance != null) SFXManager.Instance.PlaySound(sonidoExplosion, volumenExplosion);
 
-        SwitchState(State.Muerte); // Activar animación de explosión
+        rb.linearVelocity = Vector2.zero;
+
+        SwitchState(State.Muerte); // Activar animación de explosión
 
         yield return new WaitForSeconds(explosionDuration); // Esperar a que termine la anim
 

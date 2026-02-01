@@ -41,6 +41,12 @@ public class SpiderAI : MonoBehaviour
     private Collider2D myCollider; // Referencia al collider propio
     private bool isFacingRight = true; // Ajusta seg�n tu sprite original
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource spiderAudioSource;
+    [SerializeField] private AudioClip sonidoPasoSpider; // Clip: Paso araña
+    [SerializeField] private float intervaloPasosSpider = 0.3f;
+    private float stepTimer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -66,8 +72,26 @@ public class SpiderAI : MonoBehaviour
         // --- EJECUTAR COMPORTAMIENTO ---
         // Realiza la acci�n del estado actual
         ExecuteCurrentState();
+
+        if (rb.linearVelocity.magnitude > 0.1f && (currentState == SpiderState.Patrolling || currentState == SpiderState.Chasing))
+        {
+            stepTimer -= Time.deltaTime;
+            if (stepTimer <= 0)
+            {
+                PlaySpiderStep();
+                stepTimer = intervaloPasosSpider;
+            }
+        }
     }
 
+    void PlaySpiderStep()
+    {
+        if (spiderAudioSource != null && sonidoPasoSpider != null)
+        {
+            spiderAudioSource.pitch = Random.Range(0.7f, 1.3f); // Variación para que suene orgánica
+            spiderAudioSource.PlayOneShot(sonidoPasoSpider);
+        }
+    }
     // ========================================================
     //              L�GICA DE DECISI�N (EL CEREBRO)
     // ========================================================

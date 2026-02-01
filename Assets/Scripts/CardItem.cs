@@ -6,8 +6,11 @@ public class CardItem : MonoBehaviour
     public GameObject uiPanelMessage;
 
     [Header("Configuración del Item")]
-    public string ID_del_Item = "Tarjeta"; // <--- AQUÍ CAMBIAS EL NOMBRE EN UNITY
+    public string ID_del_Item = "Tarjeta";
     public Sprite iconoParaInventario;
+
+    [Header("Audio")]
+    public AudioClip sonidoRecoger; // Arrastra aquí el clip "Recoger item"
 
     private bool isPlayerNearby = false;
     private bool isMenuOpen = false;
@@ -15,10 +18,9 @@ public class CardItem : MonoBehaviour
 
     void Start()
     {
-        // Al iniciar, verificamos si ESTA tarjeta específica ya la tenemos
         if (Inventario.Instancia != null && Inventario.Instancia.TieneItem(ID_del_Item))
         {
-            Destroy(gameObject); // Si ya tengo la "Tarjeta A", borro la "Tarjeta A" del suelo
+            Destroy(gameObject);
         }
     }
 
@@ -39,13 +41,18 @@ public class CardItem : MonoBehaviour
     {
         if (iconoParaInventario == null) Debug.LogError("⚠️ ¡Falta el Sprite!");
 
+        // --- SONIDO DE RECOGER ---
+        if (SFXManager.Instance != null && sonidoRecoger != null)
+        {
+            SFXManager.Instance.PlaySound(sonidoRecoger, 0.8f);
+        }
+
         isMenuOpen = true;
         cardCollected = true;
         if (uiPanelMessage != null) uiPanelMessage.SetActive(true);
 
         if (Inventario.Instancia != null)
         {
-            // Guardamos el item con SU NOMBRE ÚNICO
             Inventario.Instancia.AgregarItem(ID_del_Item, iconoParaInventario, false);
         }
 

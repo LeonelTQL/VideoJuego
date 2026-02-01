@@ -1,32 +1,39 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // Necesario para TextMeshPro. Si usas texto legacy, quita esto.
+using TMPro;
 
 public class TerminalHacker : MonoBehaviour
 {
     [Header("Configuración UI")]
-    [SerializeField] private GameObject panelIngreso; // Arrastra aquí tu Panel
-    [SerializeField] private TMP_InputField inputPassword; // Arrastra tu InputField
-    [SerializeField] private Button botonDestruir; // Arrastra el botón de confirmar
+    [SerializeField] private GameObject panelIngreso;
+    [SerializeField] private TMP_InputField inputPassword;
+    [SerializeField] private Button botonDestruir;
+    [SerializeField] private GameObject textoAyuda; // Opcional: Un texto que diga "Presiona E"
 
     [Header("Objetivos a Destruir")]
-    [SerializeField] private GameObject caraDelFondo; // Arrastra el objeto de la cara gigante (EDNA)
+    [SerializeField] private GameObject caraDelFondo;
     [SerializeField] private string passwordCorrecta = "374101A5110";
 
+    // Bandera para saber si podemos interactuar
     private bool playerEnRango = false;
 
     void Start()
     {
-        // Asegurarnos que el panel empiece cerrado
         if (panelIngreso != null) panelIngreso.SetActive(false);
+        if (textoAyuda != null) textoAyuda.SetActive(false); // Ocultar mensaje al inicio
 
-        // Configurar el botón para que llame a la función al hacer click
         if (botonDestruir != null) botonDestruir.onClick.AddListener(VerificarPassword);
     }
 
     private void Update()
     {
-        // Opcional: Cerrar con Escape
+        // 1. Detectar tecla E para abrir panel (solo si está en rango y el panel está cerrado)
+        if (playerEnRango && Input.GetKeyDown(KeyCode.E) && !panelIngreso.activeSelf)
+        {
+            AbrirPanel();
+        }
+
+        // 2. Cerrar con Escape
         if (panelIngreso.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
             CerrarPanel();
@@ -38,7 +45,8 @@ public class TerminalHacker : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            AbrirPanel();
+            playerEnRango = true;
+            if (textoAyuda != null) textoAyuda.SetActive(true); // Mostrar "Presiona E"
         }
     }
 
@@ -46,7 +54,9 @@ public class TerminalHacker : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            CerrarPanel();
+            playerEnRango = false;
+            if (textoAyuda != null) textoAyuda.SetActive(false); // Ocultar mensaje
+            CerrarPanel(); // Cerrar si se aleja demasiado
         }
     }
 
@@ -54,7 +64,10 @@ public class TerminalHacker : MonoBehaviour
     void AbrirPanel()
     {
         panelIngreso.SetActive(true);
-        // Time.timeScale = 0f;  <--- PONLE ESTAS DOS BARRAS PARA ANULAR LA PAUSA
+        if (textoAyuda != null) textoAyuda.SetActive(false); // Ocultar la ayuda mientras escribe
+
+        // Opcional: Si quieres pausar el juego mientras escribe, descomenta esto:
+        // Time.timeScale = 0f; 
 
         inputPassword.text = "";
         StartCoroutine(FocoEnInput());
@@ -62,10 +75,7 @@ public class TerminalHacker : MonoBehaviour
 
     System.Collections.IEnumerator FocoEnInput()
     {
-        // Esperamos un frame real (ignora el timeScale)
         yield return new WaitForSecondsRealtime(0.1f);
-
-        // Forzamos el foco en el input
         inputPassword.Select();
         inputPassword.ActivateInputField();
     }
@@ -73,7 +83,10 @@ public class TerminalHacker : MonoBehaviour
     public void CerrarPanel()
     {
         panelIngreso.SetActive(false);
-        Time.timeScale = 1f; // Reanudar juego
+        // Time.timeScale = 1f; // Si pausaste, reanuda aquí
+
+        // Si sigue en rango, mostrar la ayuda de nuevo
+        if (playerEnRango && textoAyuda != null) textoAyuda.SetActive(true);
     }
 
     // --- Lógica de Destrucción ---
@@ -88,36 +101,63 @@ public class TerminalHacker : MonoBehaviour
         else
         {
             Debug.Log("Contraseña Incorrecta");
-            inputPassword.text = ""; // Borrar para intentar de nuevo
-            // Aquí podrías poner un sonido de error
+            inputPassword.text = "";
         }
     }
 
     void EjecutarDestruccionMasiva()
     {
-        // 1. Destruir la Cara del Fondo (EDNA) para liberar el paso
+        // 1. Destruir la Cara del Fondo
         if (caraDelFondo != null)
         {
             Destroy(caraDelFondo);
-            Debug.Log("Cara del fondo destruida. Paso libre.");
+            Debug.Log("Cara del fondo destruida.");
         }
 
-        // 2. Buscar y Destruir todos los Drones
-        // Usamos FindObjectsByType que es más eficiente en Unity 6
+        // 2. Drones (Usando parámetro entero "State" = 4)
         DronMovement[] drones = Object.FindObjectsByType<DronMovement>(FindObjectsSortMode.None);
         foreach (DronMovement dron in drones)
         {
-            // Opcional: Instanciar una explosión aquí antes de destruir
-            Destroy(dron.gameObject);
+            dron.enabled = false;
+
+            // Congelar físicas
+            Rigidbody2D rb = dron.GetComponent<Rigidbody2D>();
+            if (rb != null) rb.simulated = false;
+            Collider2D col = dron.GetComponent<Collider2D>();
+            if (col != null) col.enabled = false;
+
+            Animator anim = dron.GetComponentInChildren<Animator>();
+            if (anim != null)
+            {
+                // ESTA ES LA CLAVE: Usamos el parámetro entero "State" y lo ponemos en 4.
+                // Esto activará la transición a "explosion" como se ve en tu Animator.
+                anim.SetInteger("State", 4);
+                Debug.Log("Activando estado de explosión en Dron (State=4)");
+            }
+
+            Destroy(dron.gameObject, 0.8f); // Ajusta el tiempo si la animación es más larga
         }
 
-        // 3. Buscar y Destruir todas las Arañas
+        // 3. Arañas (Usando trigger "trigDie")
         SpiderAI[] aranas = Object.FindObjectsByType<SpiderAI>(FindObjectsSortMode.None);
         foreach (SpiderAI arana in aranas)
         {
-            Destroy(arana.gameObject);
-        }
+            arana.enabled = false;
 
-        Debug.Log($"Se eliminaron {drones.Length} drones y {aranas.Length} arañas.");
+            Rigidbody2D rb = arana.GetComponent<Rigidbody2D>();
+            if (rb != null) rb.simulated = false;
+            Collider2D col = arana.GetComponent<Collider2D>();
+            if (col != null) col.enabled = false;
+
+            Animator anim = arana.GetComponentInChildren<Animator>();
+            if (anim != null)
+            {
+                // Usamos el Trigger que aparece en la lista de parámetros de la araña.
+                anim.SetTrigger("trigDie");
+                Debug.Log("Activando trigger 'trigDie' en Araña");
+            }
+
+            Destroy(arana.gameObject, 0.8f); // Ajusta el tiempo si es necesario
+        }
     }
 }

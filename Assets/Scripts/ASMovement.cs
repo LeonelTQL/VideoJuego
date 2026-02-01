@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Necesario para reiniciar la escena
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class ASMovement : MonoBehaviour
@@ -7,94 +7,102 @@ public class ASMovement : MonoBehaviour
     [Header("Configuración")]
     [SerializeField] private float moveSpeed = 5f;
 
-    // Componentes
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource; // Arrastra el AudioSource del jugador aquí
+    [SerializeField] private AudioClip sonidoPaso;    // El clip de "Pasos hero"
+    [SerializeField] private AudioClip sonidoMuerte;  // El clip de "Sonido de muerte"
+    [SerializeField] private float intervaloPasos = 0.4f; // Tiempo entre cada paso
+
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 movementInput;
-
-    // Estado
     private bool isDead = false;
+    private float pasoTimer; // Temporizador para los pasos
 
     public static ASMovement instance;
 
-    // --- AGREGA ESTE BLOQUE AWAKE ---
     void Awake()
     {
         if (instance == null)
         {
-            // Si no hay jugador registrado, YO soy el original.
             instance = this;
-            DontDestroyOnLoad(gameObject); // Me hago inmortal
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            // Si YA existe un 'instance', entonces YO soy una copia sobrante de la nueva escena.
-            // ¡Me autodestruyo para no molestar!
             Destroy(gameObject);
         }
     }
 
-    // --- 1. DETECCIÓN DE CAMBIO DE ESCENA (El arreglo del Respawn) ---
-    void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+    void OnEnable() { SceneManager.sceneLoaded += OnSceneLoaded; }
+    void OnDisable() { SceneManager.sceneLoaded -= OnSceneLoaded; }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Al cargar una escena nueva, "revivimos" al jugador
         isDead = false;
-        Time.timeScale = 1f; // Aseguramos que el juego no esté pausado
-
-        // Reiniciamos el animator para quitar la animación de muerte
-        if (animator != null)
-        {
-            animator.Rebind();
-            animator.Update(0f);
-        }
-
-        // Reseteamos físicas
-        if (rb != null)
-        {
-            rb.linearVelocity = Vector2.zero;
-        }
-
-        // Nos movemos al punto de inicio
+        Time.timeScale = 1f;
+        if (animator != null) { animator.Rebind(); animator.Update(0f); }
+        if (rb != null) rb.linearVelocity = Vector2.zero;
         PosicionarJugador();
-        Debug.Log("✅ Jugador revivido y posicionado en la nueva escena.");
     }
-    // ---------------------------------------------------------------
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        // Posicionamos también al iniciar el juego por primera vez
+        // Si no asignaste el AudioSource en el inspector, lo buscamos
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
+
         PosicionarJugador();
     }
 
     void Update()
     {
-        // Si está muerto, no dejamos que se mueva ni haga nada
         if (isDead) return;
 
-        // Input de movimiento
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
-
         movementInput = new Vector2(moveX, moveY).normalized;
 
-        // Girar sprite izquierda/derecha
         if (moveX < 0.0f) transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
         else if (moveX > 0.0f) transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
-        // Animaciones
+        ActualizarAnimaciones(moveX, moveY);
+        ManejarSonidoPasos();
+    }
+
+    // --- LÓGICA DE PASOS ---
+    void ManejarSonidoPasos()
+    {
+        // Si nos estamos moviendo físicamente
+        if (movementInput.magnitude > 0.1f)
+        {
+            pasoTimer -= Time.deltaTime;
+            if (pasoTimer <= 0)
+            {
+                SonarPaso();
+                pasoTimer = intervaloPasos;
+            }
+        }
+        else
+        {
+            pasoTimer = 0; // Reiniciar para que el primer paso suene al instante al caminar
+        }
+    }
+
+    void SonarPaso()
+    {
+        if (audioSource != null && sonidoPaso != null)
+        {
+            // Variamos un poco el pitch para que no suene robótico
+            audioSource.pitch = Random.Range(0.85f, 1.15f);
+            audioSource.PlayOneShot(sonidoPaso);
+        }
+    }
+
+    void ActualizarAnimaciones(float moveX, float moveY)
+    {
         if (animator != null)
         {
             bool isMovingUp = moveY > 0.01f;
@@ -109,42 +117,36 @@ public class ASMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isDead)
-        {
-            rb.linearVelocity = Vector2.zero; // Frenado total si muere
-            return;
-        }
-
-        // Movimiento físico
+        if (isDead) { rb.linearVelocity = Vector2.zero; return; }
         rb.linearVelocity = movementInput * moveSpeed;
     }
 
-    // --- ESTA ES LA FUNCIÓN QUE TE FALTABA (La que piden la Araña y el Dron) ---
     public void Morir()
     {
-        if (isDead) return; // Si ya murió, no muere dos veces
+        if (isDead) return;
 
         isDead = true;
-        Debug.Log("💀 El jugador ha muerto.");
+
+        // --- SONIDO DE MUERTE ---
+        if (audioSource != null && sonidoMuerte != null)
+        {
+            audioSource.pitch = 1f; // Muerte siempre suena igual
+            audioSource.PlayOneShot(sonidoMuerte);
+        }
 
         if (animator != null) animator.SetTrigger("muerte");
-
-        // Iniciamos la rutina para reiniciar el juego
         StartCoroutine(ReiniciarEscenaRoutine());
     }
 
     IEnumerator ReiniciarEscenaRoutine()
     {
-        yield return new WaitForSeconds(2f); // Espera 2 segundos de animación
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Recarga la escena
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void PosicionarJugador()
     {
         GameObject puntoInicio = GameObject.Find("PuntoInicio");
-        if (puntoInicio != null)
-        {
-            transform.position = puntoInicio.transform.position;
-        }
+        if (puntoInicio != null) transform.position = puntoInicio.transform.position;
     }
 }
