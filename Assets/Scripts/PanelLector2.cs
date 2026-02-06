@@ -57,8 +57,8 @@ public class PanelLector2 : MonoBehaviour
                 Destroy(paredParaDestruir); // Desaparece la puerta
 
                 // OPCIONAL: Si quieres que se gasten las tarjetas al usarlas, descomenta esto:
-                // Inventario.Instancia.ConsumirItem("Tarjeta_A");
-                // Inventario.Instancia.ConsumirItem("Tarjeta_B");
+                Inventario.Instancia.ConsumirItem("Tarjeta_A");
+                Inventario.Instancia.ConsumirItem("Tarjeta_B");
             }
         }
     }
