@@ -6,7 +6,7 @@ public class SFXManager : MonoBehaviour
     public static SFXManager Instance;
 
     [Header("Configuración")]
-    public AudioMixerGroup canalSFX; // Arrastra el grupo SFX aquí
+    public AudioMixerGroup canalSFX;
 
     [Header("Clips de Sonido")]
     public AudioClip sonidoAceptar;
@@ -30,15 +30,32 @@ public class SFXManager : MonoBehaviour
         }
     }
 
+    // --- Esta es la clave: Verificar antes de reproducir ---
+    private bool PuedoSonar()
+    {
+        // Retorna true solo si el valor guardado es 1 (Activo)
+        return PlayerPrefs.GetInt("EfectosActivos", 1) == 1;
+    }
+
     public void PlaySound(AudioClip clip, float volumen = 1f)
     {
-        if (clip != null)
+        // Forzamos que si no existe el registro, por defecto sea 1 (Activo)
+        if (clip != null && PlayerPrefs.GetInt("EfectosActivos", 1) == 1)
         {
             source.PlayOneShot(clip, volumen);
         }
     }
+    // Dentro de SFXManager.cs
+    public bool CanPlaySFX
+    {
+        get
+        {
+            // Retorna true si el ajuste es 1, false si es 0
+            return PlayerPrefs.GetInt("EfectosActivos", 1) == 1;
+        }
+    }
 
-    public void PlayAceptar() => source.PlayOneShot(sonidoAceptar);
-    public void PlayDesplazar() => source.PlayOneShot(sonidoDesplazar);
-    public void PlayConfig() => source.PlayOneShot(sonidoConfiguracion);
+    public void PlayAceptar() { if (PuedoSonar()) source.PlayOneShot(sonidoAceptar); }
+    public void PlayDesplazar() { if (PuedoSonar()) source.PlayOneShot(sonidoDesplazar); }
+    public void PlayConfig() { if (PuedoSonar()) source.PlayOneShot(sonidoConfiguracion); }
 }

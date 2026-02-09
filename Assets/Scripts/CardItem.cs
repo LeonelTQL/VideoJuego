@@ -24,6 +24,7 @@ public class CardItem : MonoBehaviour
         }
     }
 
+    // Dentro de CardItem.cs
     void Update()
     {
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !cardCollected)
@@ -31,10 +32,19 @@ public class CardItem : MonoBehaviour
             RecogerObjeto();
         }
 
+        // Cambiamos el orden o verificamos que no se ejecute si acaba de abrirse
         if (isMenuOpen && Input.GetKeyDown(KeyCode.Escape))
         {
+            // Consumimos el input para que no pase al siguiente script
             CerrarMensaje();
         }
+    }
+
+    
+    // Método público para que el MenuController sepa si estás leyendo una nota
+    public bool IsMenuOpen()
+    {
+        return isMenuOpen;
     }
 
     void RecogerObjeto()
@@ -66,7 +76,11 @@ public class CardItem : MonoBehaviour
         isMenuOpen = false;
         if (uiPanelMessage != null) uiPanelMessage.SetActive(false);
         Time.timeScale = 1f;
-        Destroy(gameObject);
+
+        // IMPORTANTE: En lugar de destruir inmediatamente, 
+        // desactivamos para que el MenuController no se confunda en este frame
+        gameObject.SetActive(false);
+        Destroy(gameObject, 0.1f);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -102,6 +102,11 @@ public class DronMovement : MonoBehaviour
         {
             Debug.DrawRay(transform.position, (player.position - transform.position).normalized * visionRange, CanSeePlayer() ? Color.green : Color.red);
         }
+        if (loopSource != null)
+        {
+            // El zumbido se mutea o activa según los ajustes
+            loopSource.mute = PlayerPrefs.GetInt("EfectosActivos", 1) == 0;
+        }
     }
 
     // --- Comportamientos ---

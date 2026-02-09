@@ -1,9 +1,9 @@
-Ôªøusing UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems; // Necesario para limpiar la selecci√≥n
+using UnityEngine.EventSystems; // Necesario para limpiar la selecciÛn
 using UnityEngine.SceneManagement;
 
-public class MenuController : MonoBehaviour
+public class MeController : MonoBehaviour
 {
     [Header("Paneles")]
     public GameObject pausaPanel;
@@ -19,23 +19,9 @@ public class MenuController : MonoBehaviour
     public Sprite spriteInactivo; // La "O" gris
 
     private bool estaPausado = false;
-    public static MenuController Instance; // Singleton para acceso f√°cil
+    public static MenuController Instance; // Singleton para acceso f·cil
 
-    void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            transform.SetParent(null); // Se sale de cualquier padre para poder viajar
-            DontDestroyOnLoad(gameObject);
-            Debug.Log("‚úÖ UI_Global y MenuController viajando.");
-        }
-        else
-        {
-            Debug.Log("‚ö†Ô∏è Destruyendo duplicado de UI.");
-            Destroy(gameObject);
-        }
-    }
+
 
     void Start()
     {
@@ -64,13 +50,13 @@ public class MenuController : MonoBehaviour
             }
 
             // 2. Si hay una nota, nos detenemos. 
-            // El CardItem se encargar√° de cerrarse, y este script no har√° nada este frame.
+            // El CardItem se encargar· de cerrarse, y este script no har· nada este frame.
             if (hayNotaAbierta)
             {
                 return;
             }
 
-            // 3. L√≥gica normal de pausa
+            // 3. LÛgica normal de pausa
             if (estaPausado) Continuar();
             else Pausar();
         }
@@ -84,7 +70,7 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    // --- L√≥gica de Botones ---
+    // --- LÛgica de Botones ---
 
     public void AlternarMusica()
     {
@@ -111,19 +97,32 @@ public class MenuController : MonoBehaviour
         bool mActiva = PlayerPrefs.GetInt("MusicaActiva", 1) == 1;
         bool eActivos = PlayerPrefs.GetInt("EfectosActivos", 1) == 1;
 
+        // 1. SincronizaciÛn Visual (Sprites I/O)
         if (imgMusica != null) imgMusica.sprite = mActiva ? spriteActivo : spriteInactivo;
         if (imgEfectos != null) imgEfectos.sprite = eActivos ? spriteActivo : spriteInactivo;
 
-        // CONTROL DEL SISTEMA DE CAPAS
+        // 2. CONTROL DEL AUDIO SOURCE "SUELTO"
+        // Buscamos el objeto "Music" en la jerarquÌa
+        GameObject musicaObj = GameObject.Find("Music");
+        if (musicaObj != null)
+        {
+            AudioSource sourceSuelto = musicaObj.GetComponent<AudioSource>();
+            if (sourceSuelto != null)
+            {
+                sourceSuelto.mute = !mActiva;
+                sourceSuelto.volume = mActiva ? 1f : 0f;
+            }
+        }
+
+        // 3. CONTROL DEL SISTEMA DE CAPAS (MusicLayerSystem)
         if (MusicLayerSystem.Instance != null && MusicLayerSystem.Instance.capas != null)
         {
             foreach (AudioSource capa in MusicLayerSystem.Instance.capas)
             {
                 if (capa != null)
                 {
-                    // Solo silenciamos (mute), NO tocamos el volumen aqu√≠
-                    // as√≠ respetamos cu√°les capas est√°n en 1 y cu√°les en 0
                     capa.mute = !mActiva;
+                    capa.volume = mActiva ? 1f : 0f;
                 }
             }
         }
@@ -131,21 +130,20 @@ public class MenuController : MonoBehaviour
 
     private void LimpiarSeleccionVisual()
     {
-        // Esto evita que el bot√≥n se quede con el "Selected Sprite" (el bug visual)
+        // Esto evita que el botÛn se quede con el "Selected Sprite" (el bug visual)
         if (EventSystem.current != null)
         {
             EventSystem.current.SetSelectedGameObject(null);
         }
     }
 
-    // --- Navegaci√≥n ---
+    // --- NavegaciÛn ---
     public void SalirDelJuego() => Application.Quit();
     public void IniciarJuego() => SceneManager.LoadScene("Clase");
-    public void Cerrar() => SceneManager.LoadScene("Inicio");
 
     public void AbrirOpciones()
     {
-        ActualizarTodo(); // Nos aseguramos de que al abrir est√©n bien los iconos
+        ActualizarTodo(); // Nos aseguramos de que al abrir estÈn bien los iconos
         if (pausaPanel) pausaPanel.SetActive(false);
         if (inicioPanel) inicioPanel.SetActive(false);
         opcionesPanel.SetActive(true);

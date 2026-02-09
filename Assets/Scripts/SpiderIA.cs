@@ -84,11 +84,15 @@ public class SpiderAI : MonoBehaviour
         }
     }
 
+
     void PlaySpiderStep()
     {
+        // VALIDACIÓN
+        if (SFXManager.Instance != null && !SFXManager.Instance.CanPlaySFX) return;
+
         if (spiderAudioSource != null && sonidoPasoSpider != null)
         {
-            spiderAudioSource.pitch = Random.Range(0.7f, 1.3f); // Variación para que suene orgánica
+            spiderAudioSource.pitch = Random.Range(0.7f, 1.3f);
             spiderAudioSource.PlayOneShot(sonidoPasoSpider);
         }
     }

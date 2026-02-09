@@ -91,11 +91,14 @@ public class ASMovement : MonoBehaviour
         }
     }
 
+    // En ASMovement.cs, modifica SonarPaso y Morir
     void SonarPaso()
     {
+        // VALIDACIÓN: Solo suena si el SFXManager dice que está activo
+        if (SFXManager.Instance != null && !SFXManager.Instance.CanPlaySFX) return;
+
         if (audioSource != null && sonidoPaso != null)
         {
-            // Variamos un poco el pitch para que no suene robótico
             audioSource.pitch = Random.Range(0.85f, 1.15f);
             audioSource.PlayOneShot(sonidoPaso);
         }
@@ -121,16 +124,17 @@ public class ASMovement : MonoBehaviour
         rb.linearVelocity = movementInput * moveSpeed;
     }
 
+
     public void Morir()
     {
         if (isDead) return;
-
         isDead = true;
 
-        // --- SONIDO DE MUERTE ---
-        if (audioSource != null && sonidoMuerte != null)
+        // VALIDACIÓN: Solo suena si está activo
+        bool sfxActivo = PlayerPrefs.GetInt("EfectosActivos", 1) == 1;
+        if (sfxActivo && audioSource != null && sonidoMuerte != null)
         {
-            audioSource.pitch = 1f; // Muerte siempre suena igual
+            audioSource.pitch = 1f;
             audioSource.PlayOneShot(sonidoMuerte);
         }
 
