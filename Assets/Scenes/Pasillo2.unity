@@ -1073,7 +1073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -17, y: 0}
+  m_AnchoredPosition: {x: -16.99997, y: 0}
   m_SizeDelta: {x: -423.7275, y: -221.85797}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &539422605
@@ -1922,7 +1922,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: c7ec4e2c5fe742d4695dd94eca7ea003, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.522
+  m_Volume: 0.323
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2603,7 +2603,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: c7ec4e2c5fe742d4695dd94eca7ea003, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.473
+  m_Volume: 0.274
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2742,10 +2742,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.31941923
+    x: 0.023593467
     y: 0
-    width: 0.6917423
-    height: 0.70127505
+    width: 0.9522686
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

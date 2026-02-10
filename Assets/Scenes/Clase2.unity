@@ -945,7 +945,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: c7ec4e2c5fe742d4695dd94eca7ea003, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.522
+  m_Volume: 0.344
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1681,10 +1681,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.31941923
+    x: 0.023593467
     y: 0
-    width: 0.6917423
-    height: 0.70127505
+    width: 0.9522686
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -4564,7 +4564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1564985760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4587,7 +4587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -13.491394, y: -1.4989929}
+  m_AnchoredPosition: {x: -13.491425, y: -1.4989929}
   m_SizeDelta: {x: -425.7275, y: -221.858}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1564985761

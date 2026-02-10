@@ -141,7 +141,27 @@ public class MenuController : MonoBehaviour
     // --- Navegación ---
     public void SalirDelJuego() => Application.Quit();
     public void IniciarJuego() => SceneManager.LoadScene("Clase");
-    public void Cerrar() => SceneManager.LoadScene("Inicio");
+    public void Cerrar()
+    {
+        // 1. Limpieza total de objetos persistentes (DontDestroyOnLoad)
+        LimpiarTodoAntesDeSalir();
+
+        // 2. Cargar la escena de Inicio
+        SceneManager.LoadScene("Inicio");
+    }
+
+    private void LimpiarTodoAntesDeSalir()
+    {
+        // Buscamos todos los GameObjects raíz en el juego
+        GameObject[] objetos = GameObject.FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+
+        foreach (GameObject obj in objetos)
+        {
+            // Destruimos todo para que la escena de "Inicio" cargue limpia
+            // El 'gameObject' (el botón/canvas) se destruirá junto con el resto
+            Destroy(obj);
+        }
+    }
 
     public void AbrirOpciones()
     {
